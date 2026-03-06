@@ -1,0 +1,46 @@
+{
+  "handoverMatrix": [
+    {
+      "fromStage": "01_requirements",
+      "toStage": "02_basic_design",
+      "handoverFile": "project/handover/01_to_02.json",
+      "primaryDocument": "project/document/01_requirements.md"
+    },
+    {
+      "fromStage": "02_basic_design",
+      "toStage": "03_detailed_design",
+      "handoverFile": "project/handover/02_to_03.json",
+      "primaryDocument": "project/document/02_basic_design.md"
+    },
+    {
+      "fromStage": "03_detailed_design",
+      "toStage": "04_implementation",
+      "handoverFile": "project/handover/03_to_04.json",
+      "primaryDocument": "project/document/03_detailed_design.md"
+    },
+    {
+      "fromStage": "04_implementation",
+      "toStage": "05_unit_test",
+      "handoverFile": "project/handover/04_to_05.json",
+      "primaryDocument": "project/document/04_implementation.md"
+    },
+    {
+      "fromStage": "05_unit_test",
+      "toStage": "06_integration_test",
+      "handoverFile": "project/handover/05_to_06.json",
+      "primaryDocument": "project/document/05_unit_test.md"
+    },
+    {
+      "fromStage": "06_integration_test",
+      "toStage": "07_system_test",
+      "handoverFile": "project/handover/06_to_07.json",
+      "primaryDocument": "project/document/06_integration_test.md"
+    },
+    {
+      "fromStage": "07_system_test",
+      "toStage": "08_release",
+      "handoverFile": "project/handover/07_to_08.json",
+      "primaryDocument": "project/document/07_system_test.md"
+    }
+  ]
+}

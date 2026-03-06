@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/contracts/handover.schema.json",
+  "title": "Stage Handover Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "status",
+    "artifacts",
+    "handover",
+    "qualityGates",
+    "traceability"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pipelineId",
+        "handoverStage",
+        "fromStage",
+        "toStage",
+        "createdAt",
+        "createdBy",
+        "version"
+      ],
+      "properties": {
+        "pipelineId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handoverStage": {
+          "type": "string",
+          "pattern": "^[0-9]{2}_to_[0-9]{2}$"
+        },
+        "fromStage": {
+          "type": "string",
+          "pattern": "^[0-9]{2}_[a-z_]+$"
+        },
+        "toStage": {
+          "type": "string",
+          "pattern": "^[0-9]{2}_[a-z_]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^v?[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approval"
+      ],
+      "properties": {
+        "approval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "required",
+            "approved"
+          ],
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "approved": {
+              "type": "boolean"
+            },
+            "approvedBy": {
+              "type": "string"
+            },
+            "approvedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primaryDocument",
+        "supportingDocuments"
+      ],
+      "properties": {
+        "primaryDocument": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supportingDocuments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "handover": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "decisions",
+        "openQuestions",
+        "risks",
+        "assumptions"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "openQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qualityGates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checks",
+        "allPassed"
+      ],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "result",
+              "evidence"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "result": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "waived"
+                ]
+              },
+              "evidence": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "allPassed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputRefs",
+        "requirementIds"
+      ],
+      "properties": {
+        "inputRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requirementIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

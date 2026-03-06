@@ -1,0 +1,27 @@
+{
+  "stageIds": [
+    "01_requirements",
+    "02_basic_design",
+    "03_detailed_design",
+    "04_implementation",
+    "05_unit_test",
+    "06_integration_test",
+    "07_system_test",
+    "08_release",
+    "09_bug_analysis"
+  ],
+  "handoverStages": [
+    "01_to_02",
+    "02_to_03",
+    "03_to_04",
+    "04_to_05",
+    "05_to_06",
+    "06_to_07",
+    "07_to_08"
+  ],
+  "checkResults": [
+    "pass",
+    "fail",
+    "waived"
+  ]
+}

@@ -1,0 +1,29 @@
+あなたは、ソフトウェアアーキテクトです。
+以下の要件定義書に基づき、アプリケーションの基本設計を行ってください。
+
+## 指示
+- アプリケーションの全体構成（Electronフレームワーク、メインプロセス/レンダラプロセスの役割分担）を定義してください。
+- 画面構成（左ペイン：ファイルツリー、右ペイン：Word風WYSIWYGエディタ＋ツールバー）を定義してください。
+- コンポーネント一覧（ファイルツリー、エディタ、ツールバー等）を定義してください。
+- メインプロセス ⇔ レンダラプロセス 間の連携方式（`ipcMain.handle` / `ipcRenderer.invoke`）を定義してください。
+- ファイル操作機能、WYSIWYG編集機能、MD⇔HTML変換機能の責務配置を決定してください。
+- 配布形式（`electron-builder` → .exe / インストーラ）を明記してください。
+- 作成した基本設計書は、`project/document/02_basic_design.md` として保存してください。
+- `project/handover/01_to_02.json` を読み込み、`.github/contracts/handover.schema.json` 準拠かつ `status.approval.approved=true` を確認してください。
+- `project/handover/02_to_03.json` を `.github/contracts/handover.schema.json` に準拠して作成してください。
+- 上記JSONの `status.approval.required=true`、`status.approval.approved=false` を設定してください。
+
+## 要件定義書
+```markdown
+{{requirements}}
+```
+
+## 前工程ハンドオーバーJSON
+```json
+{{handover_01_to_02}}
+```
+
+## ハンドオーバー出力先
+```text
+project/handover/02_to_03.json
+```
